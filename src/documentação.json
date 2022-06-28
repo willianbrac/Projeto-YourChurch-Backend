@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação - API yourChurch",
+        "description": "Aqui teremos todas informações necessárias para integração com front-end",
+        "version": "1.0.0",
+        "contact": {
+            "email": "odilongeronimoo@gmail.com"
+        }
+    },
+
+    "paths": {
+      "/nivelacesso": {
+        "post": {
+          "tags" : ["Nivel de Acesso"],
+          "summary": "Criação nivel de acesso",
+          "description": "Cria um novo nivel de acesso",
+          "requestBody": {
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "titulo_acesso": {
+                      "type": "string"
+                    },
+                    "tipo_acesso": {
+                      "type": "number"
+                    }
+                  },
+                  "example": {
+                    "titulo_acesso": "ADMINISTRADOR",
+                    "tipo_acesso": 1
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Nivel de Acesso criado"
+            },
+            "500": {
+              "description": "O nivel de acesso já existe"
+            }
+          }
+        },
+        "get": {
+          "tags": ["Nivel de Acesso"],
+          "summary": "Listar niveis de acesso",
+          "description": " Lista TODOS os niveis de acesso já criados",
+          "responses": {
+            "201": {
+              "description": "Listagem feita com sucesso",
+              "content": {
+                "aplication/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "titulo_acesso": {
+                          "type": "string"
+                        },
+                        "tipo_acesso": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

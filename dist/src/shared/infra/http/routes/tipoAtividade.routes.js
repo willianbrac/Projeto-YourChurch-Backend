@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.tipoAtividadeRoutes = void 0;
+const express_1 = require("express");
+const CreateTipoAtividadeController_1 = require("../../../../modules/tipoAtividade/useCases/CreateTipoAtividade/CreateTipoAtividadeController");
+const DeleteTipoAtividadeController_1 = require("../../../../modules/tipoAtividade/useCases/DeleteTipoAtividade/DeleteTipoAtividadeController");
+const ListUniqueTipoAtividadeController_1 = require("../../../../modules/tipoAtividade/useCases/ListTipoAtividade/ListUniqueTipoAtividadeController");
+const ListTipoAtividadeController_1 = require("../../../../modules/tipoAtividade/useCases/ListTiposAtividades/ListTipoAtividadeController");
+const UpdateTipoAtividadeController_1 = require("../../../../modules/tipoAtividade/useCases/UpdateTipoAtividade/UpdateTipoAtividadeController");
+const ensureAuthenticated_1 = require("../middlewares/ensureAuthenticated");
+const tipoAtividadeRoutes = express_1.Router();
+exports.tipoAtividadeRoutes = tipoAtividadeRoutes;
+const createTipoAtividadeController = new CreateTipoAtividadeController_1.CreateTipoAtividadeController();
+const listTipoAtividadeController = new ListTipoAtividadeController_1.ListTipoAtividadeController();
+const listUniqueTipoAtividadeController = new ListUniqueTipoAtividadeController_1.ListUniqueTipoAtividadeController();
+const deleteTipoAtividadeController = new DeleteTipoAtividadeController_1.DeleteTipoAtividadeController();
+const updateTipoAtividadeController = new UpdateTipoAtividadeController_1.UpdateTipoAtividadeController();
+tipoAtividadeRoutes.use(ensureAuthenticated_1.ensureAuthenticated); // MIDDEWARE DE AUTENTICAÇÃO
+tipoAtividadeRoutes.post("/", createTipoAtividadeController.handler);
+tipoAtividadeRoutes.put("/:id_tipo_atividade", updateTipoAtividadeController.handler);
+tipoAtividadeRoutes.get("/", listTipoAtividadeController.handler);
+tipoAtividadeRoutes.get("/:id", listUniqueTipoAtividadeController.handler);
+tipoAtividadeRoutes.delete("/:id", deleteTipoAtividadeController.handler);

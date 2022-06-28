@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+// primeiro_nome_usuario,
+// ultimo_nome_usuario,
+// email_usuario,
+// username,
+// senha_usuario,
+// cpf_usuario,
+// rua_usuario,
+// bairro_usuario,
+// cep_usuario,
+// numero_residencia_usuario,
+// complemento_residencia_usuario,
+// cidade_usuario,
+// estado_usuario,
+// pais_usuario,

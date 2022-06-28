@@ -1,0 +1,50 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./dist/src/shared/infra/http/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "seed:admin": "node ./dist/src/shared/infra/typeorm/seed/admin.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "swagger-ui-express": "^4.1.6",
+    "tsyringe": "^4.5.0",
+    "typeorm": "^0.2.31",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.1",
+    "@types/cors": "^2.8.10",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/multer": "^1.4.5",
+    "@types/swagger-ui-express": "^4.1.2",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
+  }
+}
